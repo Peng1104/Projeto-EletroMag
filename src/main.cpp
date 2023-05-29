@@ -5,8 +5,7 @@ int pinTensao = A0;
 
 long numero_de_medicoes = 40000;
 double conversaoLeituraArduino = 5.0 / 1023.0;
-double conversaoCorrente = 0.2 / 4.75;
-double conversaoTensao = 20 / 4.71;
+
 int razaoTransformador = 2;
 
 void setup()
@@ -52,6 +51,9 @@ void loop()
 
     P += tensaoMedida * correnteMedida;
   }
+
+  double conversaoCorrente = 0.2 / picoCorrente;
+  double conversaoTensao = 20 / picoTensao;
 
   tensaoMedia /= numero_de_medicoes;
   correnteMedia /= numero_de_medicoes;
